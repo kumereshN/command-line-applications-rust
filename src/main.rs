@@ -1,6 +1,6 @@
 
 use std::fs::File;
-use std::io::{stdout,BufReader, Read};
+use std::io::{stdout, BufReader, Read};
 use anyhow::{Context, Result};
 use log::{info, warn};
 use clap::Parser;
@@ -38,12 +38,5 @@ fn main() -> Result<()> {
     let stdout = stdout;
     let mut handle = stdout.lock();
     writeln!(handle, "foo: {}", 42)?;*/
-
-    let pb = indicatif::ProgressBar::new(100);
-    for i in 0..100 {
-        pb.println(format!("[+]finished #{}", i));
-        pb.inc(1);
-    }
-    pb.finish_with_message("done");
     Ok(())
 }
